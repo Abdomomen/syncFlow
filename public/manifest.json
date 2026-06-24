@@ -1,0 +1,23 @@
+{
+  "name": "SyncFlow",
+  "short_name": "SyncFlow",
+  "description": "Task and Subscription Manager",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1c1b1d",
+  "theme_color": "#8b5cf6",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
