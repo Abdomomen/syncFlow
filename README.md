@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SyncFlow 🌊
 
-## Getting Started
+SyncFlow is a modern, enterprise-tier full-stack web application designed for comprehensive **Task and Subscription Management**. Built with Next.js (App Router) and MongoDB, it provides a seamless and visually stunning dashboard interface to keep track of workflow projects and active software licenses, with full PWA (Progressive Web App) support.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Robust Authentication:** Secure JWT-based registration, login, and silent token refreshing. Hydration-safe state handling ensures uninterrupted user sessions.
+- **Task Pipeline:** Easily create, edit, mark as complete, or delete your daily tasks.
+- **Subscription Tracking:** Log all your active subscriptions and monitor their costs, billing cycles, and upcoming renewal dates visually.
+- **Advanced Dynamic Search:** Powerful regex-backed search functionality allowing sub-string and case-insensitive matching across tasks and subscriptions instantaneously.
+- **Modern Dashboard UI:** Built with sleek colors, custom layouts, hover micro-interactions, dark-mode aesthetics, and a responsive custom sidebar & topbar layout.
+- **PWA Ready:** Installable application that behaves natively on both desktop and mobile platforms with pre-configured Service Worker endpoints and Web Manifests.
+- **Optimized Data State:** Relies on Zustand persisting mechanisms to gracefully retain the user state alongside secure HttpOnly API backend endpoints.
+
+## 🛠 Tech Stack
+
+- **Frontend:** React, Next.js (App Router), Zustand (Client side state + persist)
+- **Backend:** Next.js Serverless API Routes
+- **Database:** MongoDB, Mongoose
+- **Styling:** Vanilla CSS, Tailwind CSS Utility Classes
+- **Authentication:** JWT (JSON Web Tokens) with Next.js Headers & Cookies Middleware
+- **Data Fetching:** Custom Centralized Fetching Middleware
+
+## 📦 Getting Started
+
+### 1. Requirements
+
+Ensure you have the following installed to run this project:
+
+- [Node.js](https://nodejs.org/) (v16.14 or later)
+- [MongoDB](https://www.mongodb.com/) (Local string or Atlas URI)
+
+### 2. Environment Variables
+
+Create a `.env` or `.env.local` file in the root of the project with the following shape:
+
+```env
+# MongoDB Connection String
+MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/syncflow?retryWrites=true&w=majority
+
+# JWT Secrets for Auth
+SECRET_KEY=your_jwt_access_secret_here
+NEXT_PUBLIC_URL=http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+_(Adjust the variables above depending on what you defined inside `./app/services/db/connectDb.js` or jwt configs)_
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Clone this repository
+git clone https://github.com/Abdomomen/syncFlow.git
 
-## Learn More
+# Enter the project directory
+cd syncFlow
 
-To learn more about Next.js, take a look at the following resources:
+# Install standard dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start the development server
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 4. Open Application
 
-## Deploy on Vercel
+Navigate to [http://localhost:3000](http://localhost:3000) using your web browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧑‍💻 Usage
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Head to `/register` and set up an account safely.
+2. Sign in via `/login`.
+3. Explore `/dashboard/tasks` and `/dashboard/subscriptions` to start syncing your workflow!
+
+---
+
+_Developed & Designed to showcase Enterprise Tier dashboard experiences._
