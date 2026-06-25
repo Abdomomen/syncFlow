@@ -32,7 +32,7 @@ function AuthWatcher({ children }) {
 
       fetching();
     }
-  }, [token, setToken, router]);
+  }, [token, setToken, router, user?.username]);
 
   return <>{children}</>;
 }
